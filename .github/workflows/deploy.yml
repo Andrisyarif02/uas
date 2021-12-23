@@ -129,3 +129,4 @@ jobs:
             sudo firewall-cmd --reload
             sudo pip3 install docker-compose
             sudo /usr/local/bin/docker-compose up -d
+
