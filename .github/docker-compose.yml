@@ -1,8 +1,0 @@
-version: "3.8"
-services:
-  web:
-    image: andripakel02/hello-react:latest
-    container_name: web
-    restart: unless-stopped
-    ports:
-      - 80:80
