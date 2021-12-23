@@ -32,8 +32,8 @@ jobs:
 
       - name: 'Build and push'
         run: |
-          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/hello-react .
-          docker push ${{ secrets.DOCKERHUB_USERNAME}}/hello-react
+          docker build -t ${{ secrets.DOCKERHUB_USERNAME }}/uas .
+          docker push ${{ secrets.DOCKERHUB_USERNAME}}/uas
 
       - name: 'Write config'
         run: |
@@ -111,7 +111,7 @@ jobs:
           host: ${{ env.INSTANCE_IP }}
           username: opc
           key: ${{ secrets.OCI_KEY_FILE }}
-          source: "docker-compose.yml"
+          source: "docker-compose.yaml"
           target: "./"
 
       - name: 'Running Docker Compose'
@@ -122,7 +122,7 @@ jobs:
           key: ${{secrets.OCI_KEY_FILE}}
           script: |
             sudo yum install -y yum-utils
-            sudo yum-config-manager --add-repo https://download.docker.com/linux/centos/docker-ce.repo
+            sudo yum-config-manager --add-repo https://download.docker.com/ubuntu/centos/docker-ce.repo
             sudo yum install -y docker-ce docker-ce-cli containerd.io
             sudo systemctl restart docker
             sudo firewall-cmd --zone=docker --add-service=http --permanent
