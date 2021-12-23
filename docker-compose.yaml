@@ -2,7 +2,7 @@ version: '3.8'
 services:
   php-apache-environment:
     image: andripakel02/uas
-    container_name: php-apache-uas
+    container_name: php-apache
     depends_on:
       - db
     volumes:
